@@ -58,28 +58,29 @@ Wyniki pomiarów przedstawione są na wykresie 1 oraz w tabeli \ref{Wyniki.pomia
     ylabel={s[m]},
     xmin=0, xmax=10,
     ymin=0, ymax=600,
-    xtick={0,0.5,1,1.5,2,2.5,3,3.5,4,4.5,5,5.5,6,6.5,7,7.5,8,8.5,9,9.5,10},
-    ytick={0,100,200,300,400,500,600},
+    domain=0:10,
+    xtick={0,0.7,1.4,2.1,2.8,3.5,4.2,4.9,5.6,6.3,7,7.7,8.4,9.1,9.8},
+    ytick={0,50,100,150,200,250,300,350,400,450,500,550,600},
     ymajorgrids=true,
     grid style=dashed,
-    domain=0:10,
 ]
 \addplot
 [
-    color=blue,
+    color=darkgray,
     mark=,
-    mark size=10pt,
+    mark size=20pt,
 ]
  {9.8 * x^2 * 0.5};
 
-\addplot+[
-    color=red,
+\addplot
+[
+    color=teal,
     only marks,
-    scatter,
-    mark=halfcircle*,
-    mark size=2.9pt]
-table[meta=ma]
-{csvdosprawozdania.csv};
+    mark=diamond,
+    mark size=0.4pt
+ ]
+    table[meta=t]
+    {csvdosprawozdania.csv};
  
 \end{axis}
 \end{tikzpicture}
